@@ -1,12 +1,12 @@
 
 import './App.css';
-import Items from './Items';
-import Navbar from './Navbar';
+import HomePage from './containers/HomePage';
+
 function App() {
   return (
     <div className="App">
-  <Navbar/>
-  <Items/>
+  <HomePage/>
+
     </div>
   );
 }
