@@ -2,7 +2,8 @@ import React from 'react'
 import { useMediaQuery } from "react-responsive";
 import styled from "styled-components";
 import BrandLogo from '../../components/brandLogo';
-
+import Button from '../../components/button';
+import { Marginer } from "../../components/marginer";
 
 
 import TopSectionBackgroundImg from "../../images/landing-page.jpg";
@@ -69,16 +70,28 @@ const SloganText = styled.h3`
 
 
 function TopSection(props) {
+
+  const { children } = props;
+
+
     return (
        
         <TopSectionContainer>
-            <BackgroundFilter>
+        <BackgroundFilter>
+          {children}
+          <TopSectionInnerContainer>
                 <LogoContainer>
-                    <BrandLogo/>
+              <BrandLogo logoSize={65} textSize={55} />
+              <Marginer direction="vertical" margin={8}/>
+              <SloganText>Find The Right Specialist </SloganText>
+              <SloganText>for the Right Job</SloganText>
+              <Marginer direction="vertical" margin={15} />
+              <Button>Join Now</Button>
                 </LogoContainer>
                 <StandoutImage>
                     <img src={TheBestSpecialistsImg} alt='best of the best'/>
                 </StandoutImage>
+                </TopSectionInnerContainer>
             </BackgroundFilter>
         </TopSectionContainer>
         
