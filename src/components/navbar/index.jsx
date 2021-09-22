@@ -8,11 +8,11 @@ import BrandLogo from "../brandLogo";
 
 
 const NavbarContainer = styled.div`
-  width: 100%;
+  width: 96%;
   height: 65px;
   display: flex;
   align-items: center;
-  justify-content:space-around;
+  justify-content:space-between;
   padding: 0 1.5em;
 
   background-color: ${({ useTransparent }) =>
@@ -51,9 +51,13 @@ function Navbar(props) {
     <BrandLogo/>
       <AccessibilityContainer>
             
-     <AnchorLink>Specialist 1</AnchorLink>
+      <AnchorLink>Specialist Portal  </AnchorLink>
+      <Marginer direction="horizontal" margin={10} />
+      <Seperator/>
      <Button size={11}>Register</Button>
-     <AnchorLink>Specialist 2</AnchorLink>
+     <Marginer direction="horizontal" margin={10} />
+     <AnchorLink>  Login</AnchorLink>
+          
       </AccessibilityContainer>
     </NavbarContainer>
     )
