@@ -36,21 +36,31 @@ const LogoTitle = styled.h2`
 
 
 
-const StyledLink = styled(Link)`
+const StyledLink = styled.a`
   text-decoration: none;
 `;
 
 
 
 function BrandLogo(props) {
-    const {logosize,textSize} = props;
-    return (
-        <BrandLogoContainer>
-            <LogoImage size={logosize}>
-                <img src={LogoImg} alt="Servycing logo"   />
-            </LogoImage>
-            <LogoTitle size={textSize}>Servycing</LogoTitle>
-        </BrandLogoContainer>
+
+   const { logoSize, textSize, color, hideLogo } = props;
+
+  return (
+    <BrandLogoContainer>
+      {!hideLogo && (
+       
+          <LogoImage size={logoSize}>
+            <img src={LogoImg} alt="Servycing logo" />
+          </LogoImage>
+        
+      )}
+      <StyledLink to="/">
+        <LogoTitle size={textSize} color={color}>
+          Servycing
+        </LogoTitle>
+      </StyledLink>
+    </BrandLogoContainer>
     )
 }
 

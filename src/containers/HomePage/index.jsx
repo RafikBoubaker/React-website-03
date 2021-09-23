@@ -5,7 +5,9 @@ import {deviceSize} from '../../components/responsive/index'
 import {InnerPageContainer, PageContainer} from '../../components/pageContainer'
 import TopSection from './topSection'
 import Services from './services';
-
+import SpecialistAd from '../../components/specialistAd';
+import { Marginer } from "../../components/marginer";
+import Footer from '../../components/footer';
 
 
 
@@ -39,11 +41,13 @@ function HomePage(props) {
                 </TopSection>
                 <InnerPageContainer>
                     <ContentContainer>
-                       <Services/>
-                        
-                   </ContentContainer>
+                        <Services />
+                         <Marginer direction="vertical" margin="0.8em" />
+                    </ContentContainer>
+                   <SpecialistAd/>
                 </InnerPageContainer>
-                
+                <Marginer direction="vertical" margin="0.8em" />
+                <Footer/>
             </PageContainer>
             
         </div>

@@ -10,12 +10,14 @@ const ServicesContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  background-color: #fafafa;
 `;
 
 const Title = styled.h1`
   font-weight: 900;
   color: #000;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
   
 `;
