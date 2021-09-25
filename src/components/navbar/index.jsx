@@ -46,6 +46,8 @@ const Seperator = styled.div`
 
 
 function Navbar(props) {
+  const { useTransparent } = props;
+  
     return (
         <NavbarContainer>
     <BrandLogo/>

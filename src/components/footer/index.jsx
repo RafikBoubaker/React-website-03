@@ -1,4 +1,6 @@
 
+import { faFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled from "styled-components";
 import BrandLogo  from "../brandLogo";
@@ -131,9 +133,11 @@ function Footer() {
           <PrivacyText> &#169; All Rights Reserved. 2021</PrivacyText>
         </LeftBottomContainer>
         <RightBottomContainer>
-          <SocialIcon>
+         <SocialIcon>
+            <FontAwesomeIcon icon={faFacebook} />
           </SocialIcon>
           <SocialIcon>
+            <FontAwesomeIcon icon={faTwitter} />
           </SocialIcon>
         </RightBottomContainer>
       </BottomContainer>
