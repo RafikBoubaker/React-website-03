@@ -4,7 +4,7 @@ import styled from "styled-components";
 import BrandLogo from '../../components/brandLogo';
 import Button from '../../components/button';
 import { Marginer } from "../../components/marginer";
-
+import { deviceSize } from "../../components/responsive";
 
 import TopSectionBackgroundImg from "../../images/landing-page.jpg";
 import TheBestSpecialistsImg from "../../images/Work only with the best.png";
@@ -18,18 +18,19 @@ const TopSectionContainer = styled.div`
   background-position: 0px -150px;
   background-size: cover;
 
-
+  @media screen and (max-width: ${deviceSize.mobile}px) {
+    height: 700px;
+    background-position: 0px 0px;
+  }
 `;
-
 
 const BackgroundFilter = styled.div`
   width: 100%;
   height: 100%;
-  background-color: rgba(38, 77, 92, 0.9);
+  background-color: rgba(38, 70, 83, 0.9);
   display: flex;
   flex-direction: column;
 `;
-
 
 const TopSectionInnerContainer = styled.div`
   width: 100%;
@@ -54,7 +55,9 @@ const LogoContainer = styled.div`
   align-items: flex-start;
   flex-direction: column;
 
-
+  @media screen and (max-width: ${deviceSize.mobile}px) {
+    align-items: center;
+  }
 `;
 
 const SloganText = styled.h3`
@@ -64,15 +67,16 @@ const SloganText = styled.h3`
   font-weight: 500;
   font-size: 35px;
 
-
+  @media screen and (max-width: ${deviceSize.mobile}px) {
+    font-size: 24px;
+  }
 `;
-
 
 
 function TopSection(props) {
 
-  const { children } = props;
-
+ const { children } = props;
+ const isMobile = useMediaQuery({ maxWidth: deviceSize.mobile });
 
     return (
        
@@ -81,16 +85,21 @@ function TopSection(props) {
           {children}
           <TopSectionInnerContainer>
                 <LogoContainer>
-              <BrandLogo logoSize={65} textSize={55} />
+              <BrandLogo
+                logoSize={isMobile ? 40 : 65}
+                textSize={isMobile ? 35 : 55}
+              />
               <Marginer direction="vertical" margin={8}/>
               <SloganText>Find The Right Specialist </SloganText>
               <SloganText>for the Right Job</SloganText>
               <Marginer direction="vertical" margin={15} />
               <Button>Join Now</Button>
                 </LogoContainer>
-                <StandoutImage>
-                    <img src={TheBestSpecialistsImg} alt='best of the best'/>
-                </StandoutImage>
+                      {!isMobile && (
+                  <StandoutImage>
+                    <img src={TheBestSpecialistsImg} alt="best in the field" />
+                  </StandoutImage>
+                )}
                 </TopSectionInnerContainer>
             </BackgroundFilter>
         </TopSectionContainer>

@@ -36,7 +36,7 @@ const LogoTitle = styled.h2`
 
 
 
-const StyledLink = styled.a`
+const StyledLink = styled(Link)`
   text-decoration: none;
 `;
 

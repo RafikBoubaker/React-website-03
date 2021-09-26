@@ -12,7 +12,7 @@ const BoxContainer = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 19px;
-  background-color: #fff;
+  background-color: #ffffff;
   box-shadow: 0px 0px 2.7px rgba(15, 15, 15, 0.28);
   position: relative;
   overflow: hidden;
@@ -56,12 +56,12 @@ const HeaderContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 `;
 
 const HeaderText = styled.h2`
   font-weight: 600;
-  color: #fff;
+  color: #fdfdfd;
   z-index: 10;
   margin: 0;
   font-size: 30px;
@@ -72,11 +72,12 @@ const HeaderText = styled.h2`
 
 const SmallText = styled.h5`
   font-weight: 500;
-  color: #fff;
+  color: #f5f9fa;
   z-index: 10;
   margin: 0;
   font-size: 13px;
   line-height: 1.24;
+   margin-bottom: 60px;
 `;
 
 const InnerContainer = styled.div`

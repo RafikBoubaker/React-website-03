@@ -6,6 +6,8 @@ import { Marginer } from "../marginer";
 
 import FarmingImg from "../../images/farming.png"
 import Button from '../button';
+import { deviceSize } from '../responsive';
+import { useMediaQuery } from 'react-responsive';
 
 const SpecialistAdContainer = styled.div`
   width: 100%;
@@ -22,7 +24,9 @@ const ContentContainer = styled.div`
   align-items: center;
   justify-content: center;
 
-
+  @media screen and (max-width: ${deviceSize.mobile}px) {
+    flex-direction: column-reverse;
+  }
 `;
 
 const SloganContainer = styled.div`
@@ -32,6 +36,10 @@ const SloganContainer = styled.div`
   justify-content: flex-start;
   margin-right: 5em;
 
+  @media screen and (max-width: ${deviceSize.mobile}px) {
+    align-items: center;
+    margin: 0;
+  }
 `;
 
 const Slogan = styled.h2`
@@ -42,7 +50,9 @@ const Slogan = styled.h2`
   line-height: 1.3;
   text-align: start;
 
-
+  @media screen and (max-width: ${deviceSize.mobile}px) {
+    font-size: 20px;
+  }
 `;
 
 const StandoutImage = styled.div`
@@ -54,15 +64,25 @@ const StandoutImage = styled.div`
     height: 100%;
   }
 
+  @media screen and (max-width: ${deviceSize.mobile}px) {
+    width: 18em;
+    height: 14em;
+  }
 `;
 
 
 function SpecialistAd() {
+
+  const isMobile = useMediaQuery({ maxWidth: deviceSize.mobile });
+
     return (
         <SpecialistAdContainer>
             <ContentContainer>
                 <SloganContainer >
-                    <BrandLogo logoSize={40} textSize={35}/>
+            <BrandLogo
+             logoSize={isMobile ? 33 : 40}
+            textSize={isMobile ? 28 : 35}
+            />
              <Marginer direction="vertical" margin="1em" />
           <SloganContainer>
             <Slogan>You’re a Specialist, and you </Slogan>

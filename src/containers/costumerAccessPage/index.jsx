@@ -19,8 +19,8 @@ function CustomerAccessPage(props) {
       <Navbar />
       <StyledInnerContainer>
       <AccountBox initialActive={action} /> 
-            </StyledInnerContainer>
-             <Marginer direction="vertical" margin="0.8em" />
+           </StyledInnerContainer>
+          <Marginer direction="vertical" margin="0.8em" />
       <Footer />
     </PageContainer>
     )
